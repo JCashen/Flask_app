@@ -6,7 +6,4 @@ import random
 @app.route('/')
 def index():
     return render_template("index.html")
-
-@app.route('/animal')
-def animal():
     random_animal = random.choice(list(Animals.items()))
