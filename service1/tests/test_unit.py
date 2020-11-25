@@ -14,7 +14,7 @@ class TestResponse(TestBase):
             with patch("requests.post") as p:
                 g.return_value.text = "Lion"
                 p.return_value.text = "Roar"
-                
+                g.return_value.text = "Bill"
 
                 response = self.client.get(url_for("index"))
                 self.assertIn(b'Lion makes the noise Roar and is called Bill', response.data)
